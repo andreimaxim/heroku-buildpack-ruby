@@ -100,13 +100,13 @@ private
 
   # sets up the profile.d script for this buildpack
   def setup_profiled(*args)
-    super(*args)
+    super(ruby_layer_path: "$HOME", gem_layer_path: "$HOME")
 
     puts "IN SETUP RAILS2"
     puts "args: #{args}"
 
     puts "DEFAULT ENV Vars: #{default_env_vars}"
-    
+
     default_env_vars.each do |key, value|
       set_env_default key, value
     end
