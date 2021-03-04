@@ -420,6 +420,9 @@ SHELL
       set_env_override "GEM_PATH", "#{gem_layer_path}/#{slug_vendor_base}:$GEM_PATH"
       set_env_override "PATH",      profiled_path.join(":")
 
+      puts "PATH: #{profiled_path.join(":")}"
+      puts "GEM_PATH: #{gem_layer_path}/#{slug_vendor_base}:$GEM_PATH"
+
       set_env_default "MALLOC_ARENA_MAX", "2"     if default_malloc_arena_max?
       add_to_profiled set_default_web_concurrency if env("SENSIBLE_DEFAULTS")
 
